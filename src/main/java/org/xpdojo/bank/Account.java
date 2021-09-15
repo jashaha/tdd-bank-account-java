@@ -7,8 +7,14 @@ public class Account {
         balance += i;
     }
 
-    public void withdraw(int i){
-        balance -= i;
+    public boolean withdraw(int i){
+        if (balance >= i){
+            balance -= i;
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
 }
