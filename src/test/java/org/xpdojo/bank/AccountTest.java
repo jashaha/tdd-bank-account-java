@@ -18,4 +18,13 @@ public class AccountTest {
         assertThat(account.balance, Matchers.is(100));
     }
 
+    @Test
+    public void depositMultipleAmount() {
+        // assertThat("your first test").isBlank();
+        Account account = new Account();
+        account.deposit(100);
+        account.deposit(300);
+        assertThat(account.balance, Matchers.is(400));
+    }
+
 }
