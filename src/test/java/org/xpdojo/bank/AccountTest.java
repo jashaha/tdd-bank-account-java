@@ -11,6 +11,14 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class AccountTest {
 
     @Test
+    public void initialBalanceZero() {
+        // assertThat("your first test").isBlank();
+        Account account = new Account();
+        //account.deposit(100);
+        assertThat(account.balance, Matchers.is(0));
+    }
+
+    @Test
     public void depositAnAmountToIncreaseTheBalance() {
        // assertThat("your first test").isBlank();
         Account account = new Account();
@@ -25,6 +33,14 @@ public class AccountTest {
         account.deposit(100);
         account.deposit(300);
         assertThat(account.balance, Matchers.is(400));
+    }
+
+    @Test
+    public void withdrawMoney() {
+        Account account = new Account();
+        account.deposit(1000);
+        account.withdraw(100);
+        assertThat(account.balance, Matchers.is(900));
     }
 
 }
